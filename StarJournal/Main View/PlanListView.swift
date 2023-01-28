@@ -27,9 +27,7 @@ struct PlanListView: View {
                         destination: PlanView(
                             plan: plan,
                             selectedObject: $selectedObject
-                        ),
-                        tag: plan,
-                        selection: $selectedPlan
+                        )
                     ) {
                         VStack(alignment: .leading) {
                             Text(plan.name!)
@@ -53,9 +51,9 @@ struct PlanListView: View {
                 }
             }
         } content: {
-            Text("Select an item")
+            Text("Select a plan")
         } detail: {
-            Text("Select an item")
+            Text("Select an object")
         }
     }
 

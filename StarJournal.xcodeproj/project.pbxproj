@@ -20,6 +20,9 @@
 		021FABB729846D1A00FD4282 /* FirstPlan-23-01-26.json in Resources */ = {isa = PBXBuildFile; fileRef = 021FABB629846D1A00FD4282 /* FirstPlan-23-01-26.json */; };
 		021FABBA2985B28E00FD4282 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABB92985B28E00FD4282 /* PlanView.swift */; };
 		021FABBD2985B87A00FD4282 /* ObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABBC2985B87A00FD4282 /* ObjectView.swift */; };
+		021FABBF2985C0D300FD4282 /* ObjectDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABBE2985C0D300FD4282 /* ObjectDetailCell.swift */; };
+		021FABC12985C29500FD4282 /* LabelWithValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABC02985C29500FD4282 /* LabelWithValueView.swift */; };
+		021FABC32985C3F400FD4282 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABC22985C3F400FD4282 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		021FABB629846D1A00FD4282 /* FirstPlan-23-01-26.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FirstPlan-23-01-26.json"; sourceTree = "<group>"; };
 		021FABB92985B28E00FD4282 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
 		021FABBC2985B87A00FD4282 /* ObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectView.swift; sourceTree = "<group>"; };
+		021FABBE2985C0D300FD4282 /* ObjectDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetailCell.swift; sourceTree = "<group>"; };
+		021FABC02985C29500FD4282 /* LabelWithValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithValueView.swift; sourceTree = "<group>"; };
+		021FABC22985C3F400FD4282 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				021FABBC2985B87A00FD4282 /* ObjectView.swift */,
+				021FABBE2985C0D300FD4282 /* ObjectDetailCell.swift */,
+				021FABC02985C29500FD4282 /* LabelWithValueView.swift */,
+				021FABC22985C3F400FD4282 /* Utils.swift */,
 			);
 			path = "Object View";
 			sourceTree = "<group>";
@@ -319,8 +328,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				021FAB8B29843EE400FD4282 /* Persistence.swift in Sources */,
+				021FABC12985C29500FD4282 /* LabelWithValueView.swift in Sources */,
 				021FAB8E29843EE400FD4282 /* StarJournal.xcdatamodeld in Sources */,
 				021FABBD2985B87A00FD4282 /* ObjectView.swift in Sources */,
+				021FABBF2985C0D300FD4282 /* ObjectDetailCell.swift in Sources */,
+				021FABC32985C3F400FD4282 /* Utils.swift in Sources */,
 				021FAB8429843EE200FD4282 /* PlanListView.swift in Sources */,
 				021FAB8229843EE200FD4282 /* StarJournalApp.swift in Sources */,
 				021FABB5298463BF00FD4282 /* JSONImporter.swift in Sources */,

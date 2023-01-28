@@ -13,13 +13,21 @@ struct ObjectView: View {
     let obj: PlanObject
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(obj.id ?? "")
-                .font(.headline)
-            HStack {
-                Text(obj.type ?? "")
-                Text("\(obj.magnitude.formatted())")
+        VStack(alignment: .center) {
+            Button(action: {
+                
+            }) {
+                Text("View in Sky Safari")
+                    .font(.title2)
+                    .padding(.horizontal)
             }
+            .padding()
+            .background(Color.accentColor)
+            .foregroundColor(Color.primary)
+            .cornerRadius(15)
+            
+            ObjectDetailCell(obj: obj)
+                .padding()
         }
     }
 }

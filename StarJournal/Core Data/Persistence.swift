@@ -14,9 +14,7 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for i in 0..<10 {
-            let newItem = ObservingPlan(context: viewContext)
-            newItem.name = "Plan \(i + 1)"
-            newItem.created = .now
+            let newItem = JSONImporter.loadTestFile(context: viewContext)
         }
         do {
             try viewContext.save()

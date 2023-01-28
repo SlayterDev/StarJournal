@@ -30,13 +30,12 @@ struct PlanView: View {
         List {
             ForEach(planObjects) { obj in
                 NavigationLink(
-                    destination: ObjectView(obj: obj),
-                    tag: obj,
-                    selection: $selectedObject
+                    destination: ObjectView(obj: obj)
                 ) {
                     Text(obj.id ?? "unknown")
                 }
             }
         }
+        .navigationTitle(plan.name ?? "")
     }
 }
