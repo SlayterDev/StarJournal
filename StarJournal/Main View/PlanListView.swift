@@ -8,26 +8,40 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct PlanListView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \ObservingPlan.created, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var plans: FetchedResults<ObservingPlan>
+    
+    @State var selectedPlan: ObservingPlan?
+    @State var selectedObject: PlanObject?
 
     var body: some View {
-        NavigationView {
+        NavigationSplitView {
             List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                ForEach(plans) { plan in
+                    NavigationLink(
+                        destination: PlanView(
+                            plan: plan,
+                            selectedObject: $selectedObject
+                        ),
+                        tag: plan,
+                        selection: $selectedPlan
+                    ) {
+                        VStack(alignment: .leading) {
+                            Text(plan.name!)
+                            Text("\(plan.objects?.count ?? 0) Object(s)")
+                                .font(.caption)
+                        }
                     }
                 }
                 .onDelete(perform: deleteItems)
             }
+            .listStyle(SidebarListStyle())
+            .navigationTitle("Plans")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
@@ -38,14 +52,16 @@ struct ContentView: View {
                     }
                 }
             }
+        } content: {
+            Text("Select an item")
+        } detail: {
             Text("Select an item")
         }
     }
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            _ = JSONImporter.loadTestFile(context: viewContext)
 
             do {
                 try viewContext.save()
@@ -60,7 +76,7 @@ struct ContentView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { plans[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()

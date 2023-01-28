@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		021FAB8229843EE200FD4282 /* StarJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FAB8129843EE200FD4282 /* StarJournalApp.swift */; };
-		021FAB8429843EE200FD4282 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FAB8329843EE200FD4282 /* ContentView.swift */; };
+		021FAB8429843EE200FD4282 /* PlanListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FAB8329843EE200FD4282 /* PlanListView.swift */; };
 		021FAB8629843EE400FD4282 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021FAB8529843EE400FD4282 /* Assets.xcassets */; };
 		021FAB8929843EE400FD4282 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021FAB8829843EE400FD4282 /* Preview Assets.xcassets */; };
 		021FAB8B29843EE400FD4282 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FAB8A29843EE400FD4282 /* Persistence.swift */; };
@@ -16,6 +16,10 @@
 		021FAB9929843EE500FD4282 /* StarJournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FAB9829843EE500FD4282 /* StarJournalTests.swift */; };
 		021FABA329843EE500FD4282 /* StarJournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABA229843EE500FD4282 /* StarJournalUITests.swift */; };
 		021FABA529843EE500FD4282 /* StarJournalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABA429843EE500FD4282 /* StarJournalUITestsLaunchTests.swift */; };
+		021FABB5298463BF00FD4282 /* JSONImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABB4298463BF00FD4282 /* JSONImporter.swift */; };
+		021FABB729846D1A00FD4282 /* FirstPlan-23-01-26.json in Resources */ = {isa = PBXBuildFile; fileRef = 021FABB629846D1A00FD4282 /* FirstPlan-23-01-26.json */; };
+		021FABBA2985B28E00FD4282 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABB92985B28E00FD4282 /* PlanView.swift */; };
+		021FABBD2985B87A00FD4282 /* ObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABBC2985B87A00FD4282 /* ObjectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,7 @@
 /* Begin PBXFileReference section */
 		021FAB7E29843EE200FD4282 /* StarJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		021FAB8129843EE200FD4282 /* StarJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarJournalApp.swift; sourceTree = "<group>"; };
-		021FAB8329843EE200FD4282 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		021FAB8329843EE200FD4282 /* PlanListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListView.swift; sourceTree = "<group>"; };
 		021FAB8529843EE400FD4282 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		021FAB8829843EE400FD4282 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		021FAB8A29843EE400FD4282 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		021FAB9E29843EE500FD4282 /* StarJournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarJournalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		021FABA229843EE500FD4282 /* StarJournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarJournalUITests.swift; sourceTree = "<group>"; };
 		021FABA429843EE500FD4282 /* StarJournalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarJournalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		021FABB4298463BF00FD4282 /* JSONImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONImporter.swift; sourceTree = "<group>"; };
+		021FABB629846D1A00FD4282 /* FirstPlan-23-01-26.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "FirstPlan-23-01-26.json"; sourceTree = "<group>"; };
+		021FABB92985B28E00FD4282 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
+		021FABBC2985B87A00FD4282 /* ObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +108,13 @@
 			isa = PBXGroup;
 			children = (
 				021FAB8129843EE200FD4282 /* StarJournalApp.swift */,
-				021FAB8329843EE200FD4282 /* ContentView.swift */,
+				021FABB32984638700FD4282 /* Data Import */,
+				021FABB22984632100FD4282 /* Main View */,
+				021FABB82985B26F00FD4282 /* Plan View */,
+				021FABBB2985B85900FD4282 /* Object View */,
+				021FABB12984631100FD4282 /* Core Data */,
 				021FAB8529843EE400FD4282 /* Assets.xcassets */,
-				021FAB8A29843EE400FD4282 /* Persistence.swift */,
 				021FAB8F29843EE400FD4282 /* Info.plist */,
-				021FAB8C29843EE400FD4282 /* StarJournal.xcdatamodeld */,
 				021FAB8729843EE400FD4282 /* Preview Content */,
 			);
 			path = StarJournal;
@@ -133,6 +143,48 @@
 				021FABA429843EE500FD4282 /* StarJournalUITestsLaunchTests.swift */,
 			);
 			path = StarJournalUITests;
+			sourceTree = "<group>";
+		};
+		021FABB12984631100FD4282 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				021FAB8A29843EE400FD4282 /* Persistence.swift */,
+				021FAB8C29843EE400FD4282 /* StarJournal.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		021FABB22984632100FD4282 /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+				021FAB8329843EE200FD4282 /* PlanListView.swift */,
+			);
+			path = "Main View";
+			sourceTree = "<group>";
+		};
+		021FABB32984638700FD4282 /* Data Import */ = {
+			isa = PBXGroup;
+			children = (
+				021FABB629846D1A00FD4282 /* FirstPlan-23-01-26.json */,
+				021FABB4298463BF00FD4282 /* JSONImporter.swift */,
+			);
+			path = "Data Import";
+			sourceTree = "<group>";
+		};
+		021FABB82985B26F00FD4282 /* Plan View */ = {
+			isa = PBXGroup;
+			children = (
+				021FABB92985B28E00FD4282 /* PlanView.swift */,
+			);
+			path = "Plan View";
+			sourceTree = "<group>";
+		};
+		021FABBB2985B85900FD4282 /* Object View */ = {
+			isa = PBXGroup;
+			children = (
+				021FABBC2985B87A00FD4282 /* ObjectView.swift */,
+			);
+			path = "Object View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +293,7 @@
 			files = (
 				021FAB8929843EE400FD4282 /* Preview Assets.xcassets in Resources */,
 				021FAB8629843EE400FD4282 /* Assets.xcassets in Resources */,
+				021FABB729846D1A00FD4282 /* FirstPlan-23-01-26.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,8 +320,11 @@
 			files = (
 				021FAB8B29843EE400FD4282 /* Persistence.swift in Sources */,
 				021FAB8E29843EE400FD4282 /* StarJournal.xcdatamodeld in Sources */,
-				021FAB8429843EE200FD4282 /* ContentView.swift in Sources */,
+				021FABBD2985B87A00FD4282 /* ObjectView.swift in Sources */,
+				021FAB8429843EE200FD4282 /* PlanListView.swift in Sources */,
 				021FAB8229843EE200FD4282 /* StarJournalApp.swift in Sources */,
+				021FABB5298463BF00FD4282 /* JSONImporter.swift in Sources */,
+				021FABBA2985B28E00FD4282 /* PlanView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

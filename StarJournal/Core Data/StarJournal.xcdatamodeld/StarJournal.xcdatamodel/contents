@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22C65" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Observation" representedClassName="Observation" syncable="YES" codeGenerationType="class">
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="object" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlanObject" inverseName="observations" inverseEntity="PlanObject"/>
+    </entity>
+    <entity name="ObservingPlan" representedClassName="ObservingPlan" syncable="YES" codeGenerationType="class">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="objects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlanObject" inverseName="plan" inverseEntity="PlanObject"/>
+    </entity>
+    <entity name="PlanObject" representedClassName="PlanObject" syncable="YES" codeGenerationType="class">
+        <attribute name="commonName" optional="YES" attributeType="String"/>
+        <attribute name="constellation" optional="YES" attributeType="String"/>
+        <attribute name="dec" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="String" defaultValueString=""/>
+        <attribute name="magnitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="ra" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="observations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Observation" inverseName="object" inverseEntity="Observation"/>
+        <relationship name="plan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ObservingPlan" inverseName="objects" inverseEntity="ObservingPlan"/>
+    </entity>
+</model>

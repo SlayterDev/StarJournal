@@ -13,7 +13,7 @@ struct StarJournalApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PlanListView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
