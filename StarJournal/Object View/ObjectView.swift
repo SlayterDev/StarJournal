@@ -12,10 +12,18 @@ struct ObjectView: View {
     
     let obj: PlanObject
     
+    func openInSkySafari() {
+        let url = URL(string: "https://icandiapps.com/infopack/\(obj.id ?? "")")!
+        UIApplication.shared.open(url)
+    }
+    
     var body: some View {
         VStack(alignment: .center) {
+            ObjectDetailCell(obj: obj)
+                .padding()
+            
             Button(action: {
-                
+                openInSkySafari()
             }) {
                 Text("View in Sky Safari")
                     .font(.title2)
@@ -26,8 +34,8 @@ struct ObjectView: View {
             .foregroundColor(Color.primary)
             .cornerRadius(15)
             
-            ObjectDetailCell(obj: obj)
-                .padding()
+            Spacer()
         }
+        .navigationTitle(obj.id ?? "Unknown")
     }
 }
