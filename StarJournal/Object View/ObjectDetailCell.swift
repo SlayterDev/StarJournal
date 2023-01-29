@@ -12,10 +12,7 @@ struct ObjectDetailCell: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Details")
-                .font(.title2)
-                .bold()
-                .padding(.bottom, 8)
+            SectionHeaderLabel(label: "Details")
             
             LabelWithValueView(label: "Object ID", value: obj.id ?? "")
             LabelWithValueView(label: "Constellation", value: obj.constellation ?? "")
@@ -24,7 +21,7 @@ struct ObjectDetailCell: View {
             LabelWithValueView(label: "Coordinates", value: "RA \(obj.ra.toHms()) Dec \(obj.dec.toDms())")
         }
         .padding()
-        .background(Color.primary.opacity(0.15))
+        .background(Color.primary.opacity(0.10))
         .cornerRadius(15)
     }
 }
