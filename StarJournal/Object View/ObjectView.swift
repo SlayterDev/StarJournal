@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PencilKit
 
 struct ObjectView: View {
     @Environment(\.managedObjectContext) var viewContext
@@ -14,6 +15,9 @@ struct ObjectView: View {
     
     let obj: PlanObject
     @State var notes: String = ""
+    
+    @State var sketchDrawing: PKDrawing?
+    @State var showingSketchEditor = false
     
     init(obj: PlanObject) {
         self.obj = obj
@@ -31,22 +35,66 @@ struct ObjectView: View {
         showingNoteEditor = true
     }
     
+    func openSketchView() {
+        if let drawingData = obj.drawing {
+            do {
+                sketchDrawing = try PKDrawing(data: drawingData)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        
+        showingSketchEditor = true
+    }
+    
+    func saveSketch(_ sketch: PKDrawing) {
+        guard !sketch.bounds.isEmpty else { return }
+        
+        sketchDrawing = sketch
+        obj.drawing = sketch.dataRepresentation()
+        obj.image = sketch.image(from: sketch.bounds, scale: UIScreen.main.scale).pngData()
+        
+        do {
+            try viewContext.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func dataToUIImage(_ imageData: Data?) -> UIImage? {
+        guard let imageData = imageData else { return nil }
+        
+        return UIImage(data: imageData)
+    }
+    
     var body: some View {
         VStack(alignment: .center) {
+            if let image = dataToUIImage(obj.image) {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 300)
+                    .frame(maxWidth: .infinity)
+            }
+            
+            
             ObjectDetailCell(obj: obj)
             
-            Button(action: {
-                openInSkySafari()
-            }) {
-                Text("View in Sky Safari")
-                    .font(.title3)
-                    .padding(.horizontal)
+            HStack {
+                RoundedButton(
+                    icon: "sparkles",
+                    title: "SkySafari",
+                    backgroundColor: .accentColor,
+                    action: openInSkySafari
+                )
+                
+                RoundedButton(
+                    icon: "scribble.variable",
+                    title: "Sketch",
+                    backgroundColor: Color(red: 0.349, green: 0, blue: 0.702),
+                    action: openSketchView
+                )
             }
-            .padding()
-            .padding(.vertical, -4)
-            .background(Color.accentColor)
-            .foregroundColor(Color.primary)
-            .cornerRadius(15)
             
             Group {
                 HStack {
@@ -92,6 +140,9 @@ struct ObjectView: View {
                     }
                 }
             )
+        }
+        .sheet(isPresented: $showingSketchEditor) {
+            SketchEditorView(initialDrawing: sketchDrawing, onSave: saveSketch)
         }
     }
 }
