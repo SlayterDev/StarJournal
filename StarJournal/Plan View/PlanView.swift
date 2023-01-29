@@ -32,10 +32,46 @@ struct PlanView: View {
                 NavigationLink(
                     destination: ObjectView(obj: obj)
                 ) {
-                    Text(obj.id ?? "unknown")
+                    HStack {
+                        obj.iconForType()
+                            .frame(width: 35)
+                        VStack(alignment: .leading) {
+                            Text(obj.id ?? "unknown")
+                            Text(obj.constellation ?? "")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
                 }
             }
         }
         .navigationTitle(plan.name ?? "")
+    }
+}
+
+extension PlanObject {
+    func iconForType() -> Image {
+        switch self.type {
+        case "Open":
+            fallthrough
+        case "Globular":
+            return Image(systemName: "aqi.medium")
+        case "Dbl":
+            fallthrough
+        case "Triple":
+            return Image(systemName: "sparkles")
+        case "Galaxy":
+            return Image(systemName: "hurricane")
+        case "P Neb":
+            return Image(systemName: "sun.max.circle")
+        case "Nebula":
+            return Image(systemName: "tornado")
+        case "Moon":
+            return Image(systemName: "moon.fill")
+        case "Planet":
+            fallthrough
+        default:
+            return Image(systemName: "network")
+        }
     }
 }
