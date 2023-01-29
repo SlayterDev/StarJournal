@@ -34,14 +34,30 @@ struct PlanView: View {
                 ) {
                     HStack {
                         obj.iconForType()
-                            .frame(width: 35)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 37, height: 37)
+                            .padding(.trailing, 5)
                         VStack(alignment: .leading) {
                             Text(obj.id ?? "unknown")
+                                .font(.title3)
                             Text(obj.constellation ?? "")
-                                .font(.caption)
+                                .font(.body)
                                 .foregroundColor(.secondary)
                         }
+                        
+                        Spacer()
+                        
+                        if let note = obj.notes, !note.isEmpty {
+                            Image(systemName: "square.and.pencil")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundStyle(.secondary)
+                                .frame(width: 25, height: 25)
+                                
+                        }
                     }
+                    .padding(.vertical, 2.5)
                 }
             }
         }
