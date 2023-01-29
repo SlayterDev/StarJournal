@@ -18,6 +18,10 @@ struct PlanListView: View {
     
     @State var selectedPlan: ObservingPlan?
     @State var selectedObject: PlanObject?
+    
+    @State var isImporting = false
+    @State var showError = false
+    @State var importError: Error?
 
     var body: some View {
         NavigationSplitView {
@@ -49,11 +53,32 @@ struct PlanListView: View {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
+                ToolbarItem {
+                    Button(action: {
+                        isImporting = true
+                    }) {
+                        Label("Import Plan", systemImage: "square.and.arrow.down")
+                    }
+                }
             }
         } content: {
             Text("Select a plan")
         } detail: {
             Text("Select an object")
+        }
+        .fileImporter(
+            isPresented: $isImporting,
+            allowedContentTypes: [.plainText, .json],
+            allowsMultipleSelection: false
+        ) { result in
+            handleImport(result)
+        }
+        .alert(isPresented: $showError) {
+            Alert(
+                title: Text("Import Error"),
+                message: Text("\(importError?.localizedDescription ?? "")"),
+                dismissButton: .default(Text("Ok"))
+            )
         }
     }
 
@@ -84,6 +109,26 @@ struct PlanListView: View {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
+        }
+    }
+    
+    private func handleImport(_ result: Result<[URL], Error>) {
+        do {
+            guard let selectedFile: URL = try result.get().first else { return }
+            defer {
+                selectedFile.stopAccessingSecurityScopedResource()
+            }
+            if selectedFile.startAccessingSecurityScopedResource() {
+                let planName = selectedFile.deletingPathExtension().lastPathComponent
+                let data = try Data(contentsOf: selectedFile)
+                let json = try JSONDecoder().decode(PlanData.self, from: data)
+                _ = JSONImporter.importJSON(from: json, into: viewContext, withName: planName)
+                try viewContext.save()
+            }
+        } catch {
+            print(error.localizedDescription)
+            importError = error
+            showError = true
         }
     }
 }
