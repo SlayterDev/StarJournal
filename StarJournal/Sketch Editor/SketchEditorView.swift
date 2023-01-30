@@ -15,20 +15,27 @@ struct SketchEditorView: View {
     
     @State private var showClearWarning = false
     
-    let onSave: () -> Void
+    let onSave: (UIImage) -> Void
+    
+    let templateImage = UIImage(named: "SketchTemplate")!
     
     func clearCanvas() {
         sketchView.drawing = PKDrawing()
     }
     
     func dismissEditor() {
-        onSave()
+        let sketchImage = sketchView.drawing.image(from: sketchView.bounds, scale: UIScreen.main.scale)
+        
+        onSave(templateImage.mergeWith(topImage: sketchImage))
         dismiss()
     }
     
     var body: some View {
         NavigationView {
-            SketchView(canvasView: $sketchView)
+            Image(uiImage: templateImage)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .overlay(SketchView(canvasView: $sketchView), alignment: .bottomLeading)
                 .navigationTitle("Sketch")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -61,6 +68,6 @@ struct SketchEditorView: View {
 
 struct SketchEditorView_Previews: PreviewProvider {
     static var previews: some View {
-        SketchEditorView(sketchView: .constant(PKCanvasView()), onSave: {})
+        SketchEditorView(sketchView: .constant(PKCanvasView()), onSave: {_ in})
     }
 }

@@ -48,12 +48,12 @@ struct ObjectView: View {
         showingSketchEditor = true
     }
     
-    func saveSketch() {
+    func saveSketch(flatImage: UIImage) {
         guard !sketchView.drawing.bounds.isEmpty else { return }
         
         let sketch = sketchView.drawing
         obj.drawing = sketch.dataRepresentation()
-        obj.image = sketch.image(from: sketch.bounds, scale: UIScreen.main.scale).pngData()
+        obj.image = flatImage.pngData()
         
         do {
             try viewContext.save()

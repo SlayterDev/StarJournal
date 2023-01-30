@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0202565D2987FA9600E694E7 /* SketchTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = 0202565C2987FA9600E694E7 /* SketchTemplate.png */; };
 		021FAB8229843EE200FD4282 /* StarJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FAB8129843EE200FD4282 /* StarJournalApp.swift */; };
 		021FAB8429843EE200FD4282 /* PlanListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FAB8329843EE200FD4282 /* PlanListView.swift */; };
 		021FAB8629843EE400FD4282 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021FAB8529843EE400FD4282 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0202565C2987FA9600E694E7 /* SketchTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SketchTemplate.png; sourceTree = "<group>"; };
 		021FAB7E29843EE200FD4282 /* StarJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		021FAB8129843EE200FD4282 /* StarJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarJournalApp.swift; sourceTree = "<group>"; };
 		021FAB8329843EE200FD4282 /* PlanListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				021FABC42986015000FD4282 /* Note Editor */,
 				021FABCB2986F2EA00FD4282 /* Sketch Editor */,
 				021FABB12984631100FD4282 /* Core Data */,
+				0202565C2987FA9600E694E7 /* SketchTemplate.png */,
 				021FAB8529843EE400FD4282 /* Assets.xcassets */,
 				021FAB8F29843EE400FD4282 /* Info.plist */,
 				021FAB8729843EE400FD4282 /* Preview Content */,
@@ -340,6 +343,7 @@
 				021FAB8929843EE400FD4282 /* Preview Assets.xcassets in Resources */,
 				021FAB8629843EE400FD4282 /* Assets.xcassets in Resources */,
 				021FABB729846D1A00FD4282 /* FirstPlan-23-01-26.json in Resources */,
+				0202565D2987FA9600E694E7 /* SketchTemplate.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,8 @@ extension SketchView: UIViewRepresentable {
     func makeUIView(context: Context) -> PKCanvasView {
         canvasView.tool = PKInkingTool(.pen, color: .gray, width: 10)
         canvasView.drawingPolicy = .anyInput
+        canvasView.isOpaque = false
+        canvasView.backgroundColor = .clear
         return canvasView
     }
     
