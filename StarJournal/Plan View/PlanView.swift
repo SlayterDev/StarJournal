@@ -12,11 +12,10 @@ struct PlanView: View {
     @ObservedObject var plan: ObservingPlan
     @Environment(\.managedObjectContext) var viewContext
     
-    @Binding var selectedObject: PlanObject?
+    @State private var selectedObject: PlanObject?
     
-    init(plan: ObservingPlan, selectedObject: Binding<PlanObject?>) {
+    init(plan: ObservingPlan) {
         self.plan = plan
-        _selectedObject = selectedObject
         let fetchRequest = PlanObject.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "plan = %@", plan)
         fetchRequest.sortDescriptors = [
@@ -26,11 +25,24 @@ struct PlanView: View {
         _planObjects = FetchRequest(fetchRequest: fetchRequest)
     }
     
+    func cycleObject(direction: Int) {
+        guard let shownObject = selectedObject,
+              let currentIdx = planObjects.firstIndex(of: shownObject) else {
+            return
+        }
+        
+        if direction > 0 && currentIdx + 1 < planObjects.count {
+            selectedObject = planObjects[currentIdx + 1]
+        } else if direction < 0 && currentIdx > 0 {
+            selectedObject = planObjects[currentIdx - 1]
+        }
+    }
+    
     var body: some View {
         List {
             ForEach(planObjects) { obj in
                 NavigationLink(
-                    destination: ObjectView(obj: obj)
+                    destination: ObjectView(obj: obj, cycleObject: cycleObject)
                 ) {
                     HStack {
                         obj.iconForType()

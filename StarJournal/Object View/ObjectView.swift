@@ -13,14 +13,18 @@ struct ObjectView: View {
     
     @State var showingNoteEditor = false
     
-    let obj: PlanObject
     @State var notes: String = ""
     
     @State var sketchView = PKCanvasView()
     @State var showingSketchEditor = false
     
-    init(obj: PlanObject) {
+    let obj: PlanObject
+    
+    let cycleObject: (Int) -> Void
+    
+    init(obj: PlanObject, cycleObject: @escaping (Int) -> Void) {
         self.obj = obj
+        self.cycleObject = cycleObject
         _notes = State(initialValue: obj.notes!)
     }
     
@@ -30,8 +34,6 @@ struct ObjectView: View {
     }
     
     func openNotesView() {
-//        loadObservation()
-        
         showingNoteEditor = true
     }
     
@@ -123,9 +125,22 @@ struct ObjectView: View {
         }
         .padding()
         .navigationTitle(obj.id ?? "Unknown")
-        .onAppear {
-//            loadObservation()
-        }
+//        .toolbar {
+//            ToolbarItem(placement: .navigationBarLeading) {
+//                Button(action: {
+//                    cycleObject(-1)
+//                }) {
+//                    Label("Previous Object", systemImage: "arrow.left")
+//                }
+//            }
+//            ToolbarItem(placement: .navigationBarTrailing) {
+//                Button(action: {
+//                    cycleObject(1)
+//                }) {
+//                    Label("Next Object", systemImage: "arrow.right")
+//                }
+//            }
+//        }
         .sheet(isPresented: $showingNoteEditor) {
             NoteEditorView(
                 text: $notes,
@@ -133,7 +148,6 @@ struct ObjectView: View {
                     obj.notes = noteStr
                     do {
                         try viewContext.save()
-//                        loadObservation()
                     } catch {
                         print(error.localizedDescription)
                     }

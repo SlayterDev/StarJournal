@@ -17,7 +17,6 @@ struct PlanListView: View {
     private var plans: FetchedResults<ObservingPlan>
     
     @State var selectedPlan: ObservingPlan?
-    @State var selectedObject: PlanObject?
     
     @State var isImporting = false
     @State var showError = false
@@ -29,8 +28,7 @@ struct PlanListView: View {
                 ForEach(plans) { plan in
                     NavigationLink(
                         destination: PlanView(
-                            plan: plan,
-                            selectedObject: $selectedObject
+                            plan: plan
                         )
                     ) {
                         VStack(alignment: .leading) {
