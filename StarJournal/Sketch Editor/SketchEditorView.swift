@@ -11,24 +11,18 @@ import PencilKit
 struct SketchEditorView: View {
     @Environment(\.dismiss) private var dismiss
     
-    @State private var sketchView = PKCanvasView()
+    @Binding var sketchView: PKCanvasView
+    
     @State private var showClearWarning = false
     
-    let onSave: (PKDrawing) -> Void
-    
-    init(initialDrawing: PKDrawing?, onSave: @escaping (PKDrawing) -> Void) {
-        self.onSave = onSave
-        if let drawing = initialDrawing {
-            sketchView.drawing = drawing
-        }
-    }
+    let onSave: () -> Void
     
     func clearCanvas() {
         sketchView.drawing = PKDrawing()
     }
     
     func dismissEditor() {
-        onSave(sketchView.drawing)
+        onSave()
         dismiss()
     }
     
@@ -67,6 +61,6 @@ struct SketchEditorView: View {
 
 struct SketchEditorView_Previews: PreviewProvider {
     static var previews: some View {
-        SketchEditorView(initialDrawing: nil, onSave: {_ in})
+        SketchEditorView(sketchView: .constant(PKCanvasView()), onSave: {})
     }
 }

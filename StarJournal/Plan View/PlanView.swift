@@ -49,12 +49,11 @@ struct PlanView: View {
                         Spacer()
                         
                         if let note = obj.notes, !note.isEmpty {
-                            Image(systemName: "square.and.pencil")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .foregroundStyle(.secondary)
-                                .frame(width: 25, height: 25)
-                                
+                            IndicatorIcon(icon: "square.and.pencil")
+                        }
+                        
+                        if obj.image != nil {
+                            IndicatorIcon(icon: "scribble.variable")
                         }
                     }
                     .padding(.vertical, 2.5)

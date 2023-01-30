@@ -16,7 +16,7 @@ struct ObjectView: View {
     let obj: PlanObject
     @State var notes: String = ""
     
-    @State var sketchDrawing: PKDrawing?
+    @State var sketchView = PKCanvasView()
     @State var showingSketchEditor = false
     
     init(obj: PlanObject) {
@@ -38,7 +38,8 @@ struct ObjectView: View {
     func openSketchView() {
         if let drawingData = obj.drawing {
             do {
-                sketchDrawing = try PKDrawing(data: drawingData)
+                let sketchDrawing = try PKDrawing(data: drawingData)
+                sketchView.drawing = sketchDrawing
             } catch {
                 print(error.localizedDescription)
             }
@@ -47,10 +48,10 @@ struct ObjectView: View {
         showingSketchEditor = true
     }
     
-    func saveSketch(_ sketch: PKDrawing) {
-        guard !sketch.bounds.isEmpty else { return }
+    func saveSketch() {
+        guard !sketchView.drawing.bounds.isEmpty else { return }
         
-        sketchDrawing = sketch
+        let sketch = sketchView.drawing
         obj.drawing = sketch.dataRepresentation()
         obj.image = sketch.image(from: sketch.bounds, scale: UIScreen.main.scale).pngData()
         
@@ -68,59 +69,61 @@ struct ObjectView: View {
     }
     
     var body: some View {
-        VStack(alignment: .center) {
-            if let image = dataToUIImage(obj.image) {
-                Image(uiImage: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 300)
-                    .frame(maxWidth: .infinity)
-            }
-            
-            
-            ObjectDetailCell(obj: obj)
-            
-            HStack {
-                RoundedButton(
-                    icon: "sparkles",
-                    title: "SkySafari",
-                    backgroundColor: .accentColor,
-                    action: openInSkySafari
-                )
+        ScrollView {
+            VStack(alignment: .center) {
+                if let image = dataToUIImage(obj.image) {
+                    Image(uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 300)
+                        .frame(maxWidth: .infinity)
+                }
                 
-                RoundedButton(
-                    icon: "scribble.variable",
-                    title: "Sketch",
-                    backgroundColor: Color(red: 0.349, green: 0, blue: 0.702),
-                    action: openSketchView
-                )
-            }
-            
-            Group {
+                
+                ObjectDetailCell(obj: obj)
+                
                 HStack {
-                    SectionHeaderLabel(label: "Notes")
-                    Spacer()
-                    Button(action: {
-                        openNotesView()
-                    }) {
-                        Text("Edit")
-                    }
+                    RoundedButton(
+                        icon: "sparkles",
+                        title: "SkySafari",
+                        backgroundColor: .accentColor,
+                        action: openInSkySafari
+                    )
+                    
+                    RoundedButton(
+                        icon: "scribble.variable",
+                        title: "Sketch",
+                        backgroundColor: Color(red: 0.349, green: 0, blue: 0.702),
+                        action: openSketchView
+                    )
                 }
                 
                 Group {
-                    Text(notes)
-                        .lineLimit(nil)
-                        .frame(
-                            maxWidth: .infinity,
-                            alignment: .leading
-                        )
+                    HStack {
+                        SectionHeaderLabel(label: "Notes")
+                        Spacer()
+                        Button(action: {
+                            openNotesView()
+                        }) {
+                            Label("Edit", systemImage: "square.and.pencil")
+                        }
+                    }
+                    
+                    Group {
+                        Text(notes)
+                            .lineLimit(nil)
+                            .frame(
+                                maxWidth: .infinity,
+                                alignment: .leading
+                            )
+                    }
+                    .padding()
+                    .background(Color.primary.opacity(0.10))
+                    .cornerRadius(15)
                 }
-                .padding()
-                .background(Color.primary.opacity(0.10))
-                .cornerRadius(15)
+                
+                Spacer()
             }
-            
-            Spacer()
         }
         .padding()
         .navigationTitle(obj.id ?? "Unknown")
@@ -142,7 +145,7 @@ struct ObjectView: View {
             )
         }
         .sheet(isPresented: $showingSketchEditor) {
-            SketchEditorView(initialDrawing: sketchDrawing, onSave: saveSketch)
+            SketchEditorView(sketchView: $sketchView, onSave: saveSketch)
         }
     }
 }

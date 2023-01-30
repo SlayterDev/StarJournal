@@ -28,6 +28,7 @@
 		021FABCA2986F06100FD4282 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABC92986F06100FD4282 /* RoundedButton.swift */; };
 		021FABCD2986F31100FD4282 /* SketchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABCC2986F31100FD4282 /* SketchView.swift */; };
 		021FABCF2986F49A00FD4282 /* SketchEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABCE2986F49A00FD4282 /* SketchEditorView.swift */; };
+		021FABD12987ECE200FD4282 /* IndicatorIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABD02987ECE200FD4282 /* IndicatorIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		021FABC92986F06100FD4282 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		021FABCC2986F31100FD4282 /* SketchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchView.swift; sourceTree = "<group>"; };
 		021FABCE2986F49A00FD4282 /* SketchEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchEditorView.swift; sourceTree = "<group>"; };
+		021FABD02987ECE200FD4282 /* IndicatorIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				021FABB92985B28E00FD4282 /* PlanView.swift */,
+				021FABD02987ECE200FD4282 /* IndicatorIcon.swift */,
 			);
 			path = "Plan View";
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				021FABC12985C29500FD4282 /* LabelWithValueView.swift in Sources */,
 				021FAB8E29843EE400FD4282 /* StarJournal.xcdatamodeld in Sources */,
 				021FABBD2985B87A00FD4282 /* ObjectView.swift in Sources */,
+				021FABD12987ECE200FD4282 /* IndicatorIcon.swift in Sources */,
 				021FABC62986017900FD4282 /* NoteEditorView.swift in Sources */,
 				021FABBF2985C0D300FD4282 /* ObjectDetailCell.swift in Sources */,
 				021FABCD2986F31100FD4282 /* SketchView.swift in Sources */,
