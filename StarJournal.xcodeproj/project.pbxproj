@@ -29,6 +29,7 @@
 		021FABCD2986F31100FD4282 /* SketchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABCC2986F31100FD4282 /* SketchView.swift */; };
 		021FABCF2986F49A00FD4282 /* SketchEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABCE2986F49A00FD4282 /* SketchEditorView.swift */; };
 		021FABD12987ECE200FD4282 /* IndicatorIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABD02987ECE200FD4282 /* IndicatorIcon.swift */; };
+		021FABD32987F3BF00FD4282 /* ImageFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021FABD22987F3BF00FD4282 /* ImageFrame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		021FABCC2986F31100FD4282 /* SketchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchView.swift; sourceTree = "<group>"; };
 		021FABCE2986F49A00FD4282 /* SketchEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchEditorView.swift; sourceTree = "<group>"; };
 		021FABD02987ECE200FD4282 /* IndicatorIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorIcon.swift; sourceTree = "<group>"; };
+		021FABD22987F3BF00FD4282 /* ImageFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFrame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				021FAB8129843EE200FD4282 /* StarJournalApp.swift */,
+				021FABC22985C3F400FD4282 /* Utils.swift */,
 				021FABB32984638700FD4282 /* Data Import */,
 				021FABB22984632100FD4282 /* Main View */,
 				021FABB82985B26F00FD4282 /* Plan View */,
@@ -206,9 +209,9 @@
 				021FABBC2985B87A00FD4282 /* ObjectView.swift */,
 				021FABBE2985C0D300FD4282 /* ObjectDetailCell.swift */,
 				021FABC02985C29500FD4282 /* LabelWithValueView.swift */,
-				021FABC22985C3F400FD4282 /* Utils.swift */,
 				021FABC72986042F00FD4282 /* SectionHeaderLabel.swift */,
 				021FABC92986F06100FD4282 /* RoundedButton.swift */,
+				021FABD22987F3BF00FD4282 /* ImageFrame.swift */,
 			);
 			path = "Object View";
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				021FABC82986042F00FD4282 /* SectionHeaderLabel.swift in Sources */,
 				021FABB5298463BF00FD4282 /* JSONImporter.swift in Sources */,
 				021FABBA2985B28E00FD4282 /* PlanView.swift in Sources */,
+				021FABD32987F3BF00FD4282 /* ImageFrame.swift in Sources */,
 				021FABCA2986F06100FD4282 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

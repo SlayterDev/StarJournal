@@ -5,7 +5,12 @@
 //  Created by Brad Slayter on 1/28/23.
 //
 
-import Foundation
+import UIKit
+
+extension UIApplication {
+    static let keyWindow = keyWindowScene?.windows.filter(\.isKeyWindow).first
+    static let keyWindowScene = shared.connectedScenes.first { $0.activationState == .foregroundActive } as? UIWindowScene
+}
 
 extension Double {
     func toDms() -> String {

@@ -72,11 +72,7 @@ struct ObjectView: View {
         ScrollView {
             VStack(alignment: .center) {
                 if let image = dataToUIImage(obj.image) {
-                    Image(uiImage: image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 300)
-                        .frame(maxWidth: .infinity)
+                    ImageFrame(image: image)
                 }
                 
                 
