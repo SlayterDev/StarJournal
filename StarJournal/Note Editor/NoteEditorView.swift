@@ -25,8 +25,16 @@ struct NoteEditorView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            ZStack(alignment: .leading) {
+                if text.isEmpty {
+                    TextEditor(text: .constant("Write your observations here..."))
+                        .foregroundColor(.secondary)
+                        .disabled(true)
+                        .padding()
+                }
+                
                 TextEditor(text: $text)
+                    .opacity(text.isEmpty ? 0.25 : 1)
                     .padding()
             }
             .navigationTitle("Notes")
@@ -45,7 +53,7 @@ struct NoteEditorView: View {
 
 struct NoteEditorView_Previews: PreviewProvider {
     static var previews: some View {
-        NoteEditorView(text: .constant("Sample note"),
+        NoteEditorView(text: .constant(""),
                        onSave: { _ in })
     }
 }

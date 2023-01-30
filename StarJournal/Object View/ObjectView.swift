@@ -122,8 +122,8 @@ struct ObjectView: View {
                 
                 Spacer()
             }
+            .padding()
         }
-        .padding()
         .navigationTitle(obj.id ?? "Unknown")
 //        .toolbar {
 //            ToolbarItem(placement: .navigationBarLeading) {

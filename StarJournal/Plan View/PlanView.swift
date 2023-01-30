@@ -91,8 +91,8 @@ extension PlanObject {
             return Image(systemName: "hurricane")
         case "P Neb":
             return Image(systemName: "sun.max.circle")
-        case "Nebula":
-            return Image(systemName: "tornado")
+        case "Neb":
+            return Image(systemName: "smoke.fill")
         case "Moon":
             return Image(systemName: "moon.fill")
         case "Planet":
