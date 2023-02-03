@@ -33,6 +33,17 @@ extension Double {
         
         return "\(self < 0 ? "-" : "")\(Int(h))h\(Int(m))'\(String(format: "%.1f", s))\""
     }
+    
+    static func hmsToDeg(h: Double, m: Double, s: Double) -> Double {
+        return 15 * (h + m/60 + s/(60*60))
+    }
+    
+    static func dmsToDeg(v: String, d: Double, m: Double, s: Double) -> Double {
+        let sign: Double = v == "+" ? 1 : -1
+        
+        let deg = d + m/60 + s/(60*60)
+        return sign * deg
+    }
 }
 
 extension UIImage {

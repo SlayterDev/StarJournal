@@ -119,7 +119,7 @@ struct PlanListView: View {
             if selectedFile.startAccessingSecurityScopedResource() {
                 let planName = selectedFile.deletingPathExtension().lastPathComponent
                 let data = try Data(contentsOf: selectedFile)
-                let json = try JSONDecoder().decode(PlanData.self, from: data)
+                let json = try JSONDecoder().decode([ObjectData].self, from: data)
                 _ = JSONImporter.importJSON(from: json, into: viewContext, withName: planName)
                 try viewContext.save()
             }

@@ -16,7 +16,6 @@ struct ObjectData: Codable {
     let dec: String
     let constellation: String
     let name: String
-    let difficultyindex: String
 }
 
 struct PlanData: Codable {
@@ -27,16 +26,16 @@ struct JSONImporter {
     static func loadTestFile(context: NSManagedObjectContext) -> ObservingPlan {
         let planName = "FirstPlan-23-01-26"
         let data = try! Data(contentsOf: Bundle.main.url(forResource: planName, withExtension: "json")!)
-        let json = try! JSONDecoder().decode(PlanData.self, from: data)
+        let json = try! JSONDecoder().decode([ObjectData].self, from: data)
         return importJSON(from: json, into: context, withName: planName)
     }
     
-    static func importJSON(from data: PlanData, into context: NSManagedObjectContext, withName name: String) -> ObservingPlan {
+    static func importJSON(from data: [ObjectData], into context: NSManagedObjectContext, withName name: String) -> ObservingPlan {
         let plan = ObservingPlan(context: context)
         plan.created = .now
         plan.name = name
         
-        for objectData in data.objects {
+        for objectData in data {
             let object = PlanObject(context: context)
             object.id = objectData.id
             object.magnitude = Double(objectData.magnitude) ?? 0

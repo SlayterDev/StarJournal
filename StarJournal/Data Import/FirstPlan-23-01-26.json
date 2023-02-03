@@ -1,244 +1,242 @@
-{
-	"objects":[
-		{
-			"id" : "NGC752",
-			"magnitude" : "5.7",
-			"objecttype" : "Open",
-			"ra" : "29.420834",
-			"dec" : "37.785",
-			"constellation" : "And",
-			"name" : "",
-			"difficultyindex" : "-999"
-		},
-		{
-			"id" : "NGC772",
-			"magnitude" : "10.3",
-			"objecttype" : "Galaxy",
-			"ra" : "29.832709",
-			"dec" : "19.00797",
-			"constellation" : "Ari",
-			"name" : "",
-			"difficultyindex" : "-999"
-		},
-		{
-			"id" : "HR1043",
-			"magnitude" : "6.13",
-			"objecttype" : "Dbl",
-			"ra" : "52.547082",
-			"dec" : "59.36611",
-			"constellation" : "Cam",
-			"name" : "SAO24062, HD21427",
-			"difficultyindex" : "83.270567"
-		},
-		{
-			"id" : "HR790",
-			"magnitude" : "5.71",
-			"objecttype" : "Dbl",
-			"ra" : "40.307915",
-			"dec" : "-0.69583",
-			"constellation" : "Cet",
-			"name" : "SAO130055, HD16765, 84 Cet",
-			"difficultyindex" : "83.0859555"
-		},
-		{
-			"id" : "NGC1851",
-			"magnitude" : "7.3",
-			"objecttype" : "Globular",
-			"ra" : "78.527627",
-			"dec" : "-40.04625",
-			"constellation" : "Col",
-			"name" : "",
-			"difficultyindex" : "-999"
-		},
-		{
-			"id" : "NGC1851",
-			"magnitude" : "7.3",
-			"objecttype" : "Globular",
-			"ra" : "78.527627",
-			"dec" : "-40.04625",
-			"constellation" : "Col",
-			"name" : "",
-			"difficultyindex" : "-999"
-		},
-		{
-			"id" : "NGC1535",
-			"magnitude" : "10",
-			"objecttype" : "P Neb",
-			"ra" : "63.565664",
-			"dec" : "-12.73936",
-			"constellation" : "Eri",
-			"name" : "",
-			"difficultyindex" : "-999"
-		},
-		{
-			"id" : "HR963",
-			"magnitude" : "3.87",
-			"objecttype" : "Dbl",
-			"ra" : "48.017918",
-			"dec" : "-28.98694",
-			"constellation" : "For",
-			"name" : "SAO168373, HD20010, Alp For,Fornacis",
-			"difficultyindex" : "83.7293804"
-		},
-		{
-			"id" : "HR1058",
-			"magnitude" : "6.5",
-			"objecttype" : "Dbl",
-			"ra" : "52.047915",
-			"dec" : "-35.85333",
-			"constellation" : "For",
-			"name" : "SAO194318, HD21635, Chi For",
-			"difficultyindex" : "83.8298207"
-		},
-		{
-			"id" : "NGC1201",
-			"magnitude" : "10.6",
-			"objecttype" : "Galaxy",
-			"ra" : "46.032915",
-			"dec" : "-26.06944",
-			"constellation" : "For",
-			"name" : "",
-			"difficultyindex" : "-999"
-		},
-		{
-			"id" : "M35",
-			"magnitude" : "5.5",
-			"objecttype" : "Open",
-			"ra" : "92.250001",
-			"dec" : "24.35",
-			"constellation" : "Gem",
-			"name" : "NGC2168",
-			"difficultyindex" : "-999"
-		},
-		{
-			"id" : "NGC2264",
-			"magnitude" : "3.9",
-			"objecttype" : "Open",
-			"ra" : "100.241668",
-			"dec" : "9.895",
-			"constellation" : "Mon",
-			"name" : "Christmas Tree Cluster,Cone Nebula (Conus N.),X-mas Tree Cluster",
-			"difficultyindex" : "-999"
-		},
-		{
-			"id" : "NGC2232",
-			"magnitude" : "3.9",
-			"objecttype" : "Open",
-			"ra" : "97.004163",
-			"dec" : "-4.84667",
-			"constellation" : "Mon",
-			"name" : "",
-			"difficultyindex" : "-999"
-		},
-		{
-			"id" : "NGC1976",
-			"magnitude" : "4",
-			"objecttype" : "Neb",
-			"ra" : "83.818166",
-			"dec" : "-5.39022",
-			"constellation" : "Ori",
-			"name" : "Orion A",
-			"difficultyindex" : "-999"
-		},
-		{
-			"id" : "HR1019",
-			"magnitude" : "5.61",
-			"objecttype" : "Triple",
-			"ra" : "51.123751",
-			"dec" : "33.53583",
-			"constellation" : "Per",
-			"name" : "SAO56419, HD20995",
-			"difficultyindex" : "80.9311272"
-		},
-		{
-			"id" : "HR1379",
-			"magnitude" : "5.76",
-			"objecttype" : "Dbl",
-			"ra" : "66.155834",
-			"dec" : "33.95972",
-			"constellation" : "Per",
-			"name" : "SAO57216, HD27786, 56 Per",
-			"difficultyindex" : "81.9517029"
-		},
-		{
-			"id" : "NGC1499",
-			"magnitude" : "",
-			"objecttype" : "Neb",
-			"ra" : "60.808332",
-			"dec" : "36.36666",
-			"constellation" : "Per",
-			"name" : "California Nebula",
-			"difficultyindex" : "-999"
-		},
-		{
-			"id" : "Moon",
-			"magnitude" : "-12.6",
-			"objecttype" : "Moon",
-			"ra" : "25.939865",
-			"dec" : "9.30732",
-			"constellation" : "Psc",
-			"name" : "",
-			"difficultyindex" : "-999"
-		},
-		{
-			"id" : "Jupiter",
-			"magnitude" : "-1.792",
-			"objecttype" : "Planet",
-			"ra" : "5.037042",
-			"dec" : "0.88376",
-			"constellation" : "Psc",
-			"name" : "",
-			"difficultyindex" : "-999"
-		},
-		{
-			"id" : "HR595",
-			"magnitude" : "5.23",
-			"objecttype" : "Dbl",
-			"ra" : "30.511665",
-			"dec" : "2.76361",
-			"constellation" : "Psc",
-			"name" : "HD12446, Alp Psc, 113 Psc,Alrescha",
-			"difficultyindex" : "81.70748"
-		},
-		{
-			"id" : "M45",
-			"magnitude" : "1.6",
-			"objecttype" : "Open",
-			"ra" : "56.875001",
-			"dec" : "24.11667",
-			"constellation" : "Tau",
-			"name" : "Pleiades, Seven Sisters, Subaru,Pleiades,Seven Sisters,Subaru",
-			"difficultyindex" : "-999"
-		},
-		{
-			"id" : "M45",
-			"magnitude" : "1.6",
-			"objecttype" : "Open",
-			"ra" : "56.875001",
-			"dec" : "24.11667",
-			"constellation" : "Tau",
-			"name" : "Pleiades, Seven Sisters, Subaru,Pleiades,Seven Sisters,Subaru",
-			"difficultyindex" : "-999"
-		},
-		{
-			"id" : "HR1279",
-			"magnitude" : "6.01",
-			"objecttype" : "Dbl",
-			"ra" : "61.924996",
-			"dec" : "15.16278",
-			"constellation" : "Tau",
-			"name" : "SAO93775, HD26015",
-			"difficultyindex" : "84.1673821"
-		},
-		{
-			"id" : "NGC1514",
-			"magnitude" : "10",
-			"objecttype" : "P Neb",
-			"ra" : "62.320611",
-			"dec" : "30.77592",
-			"constellation" : "Tau",
-			"name" : "Crystal Ball Nebula",
-			"difficultyindex" : "-999"
-		}
-	]
-}
+[
+    {
+        "id": "NGC752",
+        "magnitude": "5.6999998",
+        "objecttype": "Open",
+        "ra": "29.4208342",
+        "dec": "37.7849998",
+        "constellation": "And",
+        "name": "",
+        "difficultyindex": "-999"
+    },
+    {
+        "id": "NGC772",
+        "magnitude": "10.3000002",
+        "objecttype": "Galaxy",
+        "ra": "29.8327088",
+        "dec": "19.0079727",
+        "constellation": "Ari",
+        "name": "",
+        "difficultyindex": "-999"
+    },
+    {
+        "id": "HR1043",
+        "magnitude": "6.1300001",
+        "objecttype": "Dbl",
+        "ra": "52.5470817",
+        "dec": "59.3661118",
+        "constellation": "Cam",
+        "name": "SAO24062, HD21427",
+        "difficultyindex": "83.2705671"
+    },
+    {
+        "id": "HR790",
+        "magnitude": "5.71",
+        "objecttype": "Dbl",
+        "ra": "40.3079152",
+        "dec": "-0.6958333",
+        "constellation": "Cet",
+        "name": "SAO130055, HD16765, 84 Cet",
+        "difficultyindex": "83.0859555"
+    },
+    {
+        "id": "NGC1851",
+        "magnitude": "7.3000002",
+        "objecttype": "Globular",
+        "ra": "78.527627",
+        "dec": "-40.0462494",
+        "constellation": "Col",
+        "name": "",
+        "difficultyindex": "-999"
+    },
+    {
+        "id": "NGC1851",
+        "magnitude": "7.3000002",
+        "objecttype": "Globular",
+        "ra": "78.527627",
+        "dec": "-40.0462494",
+        "constellation": "Col",
+        "name": "",
+        "difficultyindex": "-999"
+    },
+    {
+        "id": "NGC1535",
+        "magnitude": "10",
+        "objecttype": "P Neb",
+        "ra": "63.5656643",
+        "dec": "-12.7393608",
+        "constellation": "Eri",
+        "name": "",
+        "difficultyindex": "-999"
+    },
+    {
+        "id": "HR963",
+        "magnitude": "3.8699999",
+        "objecttype": "Dbl",
+        "ra": "48.0179179",
+        "dec": "-28.9869442",
+        "constellation": "For",
+        "name": "SAO168373, HD20010, Alp For,Fornacis",
+        "difficultyindex": "83.7293804"
+    },
+    {
+        "id": "HR1058",
+        "magnitude": "6.5",
+        "objecttype": "Dbl",
+        "ra": "52.0479155",
+        "dec": "-35.8533325",
+        "constellation": "For",
+        "name": "SAO194318, HD21635, Chi For",
+        "difficultyindex": "83.8298207"
+    },
+    {
+        "id": "NGC1201",
+        "magnitude": "10.6000004",
+        "objecttype": "Galaxy",
+        "ra": "46.0329151",
+        "dec": "-26.0694447",
+        "constellation": "For",
+        "name": "",
+        "difficultyindex": "-999"
+    },
+    {
+        "id": "Moon",
+        "magnitude": "-12.6",
+        "objecttype": "Moon",
+        "ra": "101.9705989",
+        "dec": "27.1786874",
+        "constellation": "Gem",
+        "name": "",
+        "difficultyindex": "-999"
+    },
+    {
+        "id": "M35",
+        "magnitude": "5.5",
+        "objecttype": "Open",
+        "ra": "92.2500014",
+        "dec": "24.3500004",
+        "constellation": "Gem",
+        "name": "NGC2168",
+        "difficultyindex": "-999"
+    },
+    {
+        "id": "NGC2264",
+        "magnitude": "3.9000001",
+        "objecttype": "Open",
+        "ra": "100.2416682",
+        "dec": "9.8950005",
+        "constellation": "Mon",
+        "name": "Christmas Tree Cluster,Cone Nebula (Conus N.),X-mas Tree Cluster",
+        "difficultyindex": "-999"
+    },
+    {
+        "id": "NGC2232",
+        "magnitude": "3.9000001",
+        "objecttype": "Open",
+        "ra": "97.0041633",
+        "dec": "-4.8466668",
+        "constellation": "Mon",
+        "name": "",
+        "difficultyindex": "-999"
+    },
+    {
+        "id": "NGC1976",
+        "magnitude": "4",
+        "objecttype": "Neb",
+        "ra": "83.8181662",
+        "dec": "-5.3902221",
+        "constellation": "Ori",
+        "name": "Orion A",
+        "difficultyindex": "-999"
+    },
+    {
+        "id": "HR1019",
+        "magnitude": "5.6100001",
+        "objecttype": "Triple",
+        "ra": "51.1237514",
+        "dec": "33.5358315",
+        "constellation": "Per",
+        "name": "SAO56419, HD20995",
+        "difficultyindex": "80.9311272"
+    },
+    {
+        "id": "HR1379",
+        "magnitude": "5.7600002",
+        "objecttype": "Dbl",
+        "ra": "66.1558342",
+        "dec": "33.9597206",
+        "constellation": "Per",
+        "name": "SAO57216, HD27786, 56 Per",
+        "difficultyindex": "81.9517029"
+    },
+    {
+        "id": "NGC1499",
+        "magnitude": "",
+        "objecttype": "Neb",
+        "ra": "60.808332",
+        "dec": "36.3666649",
+        "constellation": "Per",
+        "name": "California Nebula",
+        "difficultyindex": "-999"
+    },
+    {
+        "id": "Jupiter",
+        "magnitude": "-1.7606484",
+        "objecttype": "Planet",
+        "ra": "6.0441145",
+        "dec": "1.3372758",
+        "constellation": "Psc",
+        "name": "",
+        "difficultyindex": "-999"
+    },
+    {
+        "id": "HR595",
+        "magnitude": "5.23",
+        "objecttype": "Dbl",
+        "ra": "30.5116653",
+        "dec": "2.7636111",
+        "constellation": "Psc",
+        "name": "HD12446, Alp Psc, 113 Psc,Alrescha",
+        "difficultyindex": "81.70748"
+    },
+    {
+        "id": "M45",
+        "magnitude": "1.6",
+        "objecttype": "Open",
+        "ra": "56.8750012",
+        "dec": "24.1166668",
+        "constellation": "Tau",
+        "name": "Pleiades, Seven Sisters, Subaru,Pleiades,Seven Sisters,Subaru",
+        "difficultyindex": "-999"
+    },
+    {
+        "id": "M45",
+        "magnitude": "1.6",
+        "objecttype": "Open",
+        "ra": "56.8750012",
+        "dec": "24.1166668",
+        "constellation": "Tau",
+        "name": "Pleiades, Seven Sisters, Subaru,Pleiades,Seven Sisters,Subaru",
+        "difficultyindex": "-999"
+    },
+    {
+        "id": "HR1279",
+        "magnitude": "6.0100002",
+        "objecttype": "Dbl",
+        "ra": "61.9249964",
+        "dec": "15.1627779",
+        "constellation": "Tau",
+        "name": "SAO93775, HD26015",
+        "difficultyindex": "84.1673821"
+    },
+    {
+        "id": "NGC1514",
+        "magnitude": "10",
+        "objecttype": "P Neb",
+        "ra": "62.3206115",
+        "dec": "30.7759171",
+        "constellation": "Tau",
+        "name": "Crystal Ball Nebula",
+        "difficultyindex": "-999"
+    }
+]
